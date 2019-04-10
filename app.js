@@ -13,10 +13,14 @@ $(document).ready(function(){
         //Setup Player One
         //Setup Player Two
         //Allow for first player to move
+        //make the move
         //check for win
         //Allow for second player to move
+        //make the move
         //check for win
         // check for wins looping over the board
+        //switch players
+        //
 
 
 }),
