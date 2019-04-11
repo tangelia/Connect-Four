@@ -1,2 +1,23 @@
 /* style the board 
 create the empty grid*/
+body{
+  height: 700px;
+  background-color: cyan; /* For browsers that do not support gradients */
+  background-image: linear-gradient(cyan, palegreen); 
+    
+}
+h4{
+    font-family: 'Montserrat', sans-serif;
+}
+.gameboard{
+    background: darkgray;
+    display: inline-block;
+    text-align: center;
+}
+.row{
+
+}
+
+.col{
+
+}
