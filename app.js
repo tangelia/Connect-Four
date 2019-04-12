@@ -1,33 +1,51 @@
 $(document).ready(function(){
-    //balance declarations here
+    //declarations here
     
     
-    //  Place event listeners here
+     //Setup board
+     const grid = [
+         ['','','','','','',''],
+         ['','','','','','',''],
+         ['','','','','','',''],
+         ['','','','','','',''],
+         ['','','','','','',''],
+         ['','','','','','',''],
+
+     ];
+    //Place event listeners here
+
     
 
-    //Setup board
+   
     
     //Setup variables
 
     //Set up Game loop
     //  a button to start the game
+
         //Show board
         //Setup Player One
         //Setup Player Two
         //Allow for first player to move
         // hover for move
+        // function moveHover(){ 
+            
+
+
+
+        // }
         //make the move
         //check for win
-        // function horizontalWin{
+        // function horizontalWin(){
 
         // }
-        // function verticalWin{
+        // function verticalWin() {
 
         // }
-        // function diagonalWinLeft{
+        // function diagonalWinLeft(){
 
         // }
-        // function diagonalWinRight{
+        // function diagonalWinRight (){
 
         // }
         //Switch Player
@@ -37,7 +55,7 @@ $(document).ready(function(){
         // check for wins looping over the board
         //switch players
         //Win modal
-        // function Win{
+        // function Win (){
 
         // }
         //Lose modal
@@ -48,6 +66,11 @@ $(document).ready(function(){
         // function exitGame{
 
         // }
+// play music
+// function playMusic(){
+//     let music = new Audio('musicfile.mp3');
+//     music.play();
+//     }
 
 
-}),
+});
