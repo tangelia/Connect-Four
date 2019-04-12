@@ -2,22 +2,42 @@
 create the empty grid*/
 body{
   height: 700px;
+  text-align: center;
   background-color: cyan; /* For browsers that do not support gradients */
   background-image: linear-gradient(cyan, palegreen); 
     
 }
-h4{
-    font-family: 'Montserrat', sans-serif;
+h1{
+  font-family: 'Montserrat', sans-serif;
+  color: whitesmoke;
 }
 .gameboard{
-    background: darkgray;
-    display: inline-block;
-    text-align: center;
+  background-color: darkgray;
+  display: inline-block;
 }
-.row{
-
-}
-
 .col{
+width: 70px;
+height: 70px;
+display: inline-block;
+background-color:white;
+border-radius: 50%;
+margin 5px;
+}
 
+.col .empty{
+cursor: pointer;
+}
+
+.hover-orange{
+  background-color: rgba(255,127,80,0.2);
+}
+.hover-black{
+  background-color: rgba(38,50,58,0.2);
+}
+.col .orange{
+background-color: rgb(255,127,80); 
+}
+
+.col .black {
+background-color: rgb(38,50,58);
 }
