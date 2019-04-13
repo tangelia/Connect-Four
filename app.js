@@ -13,7 +13,7 @@ const grid = [
     [{},{},{},{},{},{},{}],
     [{},{},{},{},{},{},{}],
     [{},{},{},{},{},{},{}],
-    [{},{},{},{},{},{},{}],
+    [{},{},{},{color:"coral"},{},{},{}],
 ];
 
 const render = ()=>{
@@ -22,7 +22,9 @@ const render = ()=>{
     for (let i=0;i < grid.length; i++){
         let row = grid[i];
     for (let j=0; j < row.length; j++){
-        doc = doc +`<circle fill='white' r='30px' cx='${j * 70 + 50}px' cy='${i * 70 + 50}px'></circle>`;
+        const circle = grid[i][j];
+        const color = circle && circle.color || 'white';
+        doc = doc +`<circle fill='${color}' r='30px' cx='${j * 70 + 50}px' cy='${i * 70 + 50}px'></circle>`;
     }    
     }
     console.log('hellooooooo');
