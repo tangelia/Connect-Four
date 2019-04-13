@@ -1,36 +1,45 @@
-const PLAYER_TOKEN = "orange"
-const PLAYER_TWO = "black"
+ //Setup variables
+// const PLAYER_TOKEN ='orange'
+// const PLAYER_TWO = "black"
 
-
+//Show board
+    //Setup Player One
+    //Setup Player Two
 $(document).ready(function(){
 const grid = [
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-]
- $('.col').click(function(){
-     $(this).html(PLAYER_TOKEN);
-     const i = $(this).data('i');
-     const j = $(this).data('j');
-     grid[i][j] = PLAYER_TOKEN;
-     console.log(grid)
- })
- 
+    [{},{},{},{},{},{},{}],
+    [{},{},{},{},{},{},{}],
+    [{},{},{},{},{},{},{}],
+    [{},{},{},{},{},{},{}],
+    [{},{},{},{},{},{},{}],
+    [{},{},{},{},{},{},{}],
+    [{},{},{},{},{},{},{}],
+];
 
-  
-    //Setup variables
+const render = ()=>{
+    const svg = document.getElementById("svg");
+    let doc = ``;
+    for (let i=0;i < grid.length; i++){
+        let row = grid[i];
+    for (let j=0; j < row.length; j++){
+        doc = doc +`<circle fill='white' r='30px' cx='${j * 70 + 50}px' cy='${i * 70 + 50}px'></circle>`;
+    }    
+    }
+    console.log('hellooooooo');
+    svg.innerHTML= doc;
+};
+render();
+});
+
+// Set event listeners here
+
+
+ 
 
 
     //Set up Game loop
     //  a button to start the game
 
-        //Show board
-        //Setup Player One
-        //Setup Player Two
         //Allow for first player to move
         // hover for move
         // function moveHover(){ 
@@ -39,11 +48,12 @@ const grid = [
 
 
         // }
-        //make the move
-        //check for win
-        // function horizontalWin(){
-
-        // }
+    //make the move
+    // check for win
+    // function horizontalWin(){
+    //     for (let i=0;i<7;)
+        
+    // }
         // function verticalWin() {
 
         // }
@@ -78,4 +88,4 @@ const grid = [
 //     }
 
 
-});
+// });
