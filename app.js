@@ -29,7 +29,7 @@ $(document).ready(function() {
         //styles the circle-tiles
         doc =
           doc +
-          `<circle onclick="clickCircle(${i},${j})" fill='${color}' r='30px' cx='${j *
+          `<circle onclick="clickCircle(${j},${i})" fill='${color}' r='30px' cx='${j *
             70 +
             50}px' cy='${i * 70 + 50}px'></circle>`;
       }
@@ -37,8 +37,19 @@ $(document).ready(function() {
     // console.log('hellooooooo');
     svg.innerHTML = doc;
   };
+  //   Set up Player moves
+  let currentPlayer = "coral";
   window.clickCircle = (x, y) => {
-    console.log("you clicked circle ", x, y);
+    for (let i = grid.length - 1; i >= 0; i--) {
+      let row = grid[i];
+      let lastEmptyCircle = row[x];
+      console.log(y, lastEmptyCircle);
+      if (!lastEmptyCircle.color){
+          row[x] = {color:currentPlayer};
+          render();
+          return;
+      }
+    }
   };
   render();
 });
