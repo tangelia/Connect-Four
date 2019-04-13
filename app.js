@@ -1,6 +1,5 @@
 //Setup variables
-// const PLAYER_TOKEN ='orange'
-// const PLAYER_TWO = "black"
+let currentPlayer = "coral";
 
 //Show board
 
@@ -12,7 +11,7 @@ $(document).ready(function() {
     [{}, {}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, { color: "coral" }, { color: "black" }, {}, {}]
+    [{}, {}, {}, {}, {}, {}, {}]
   ];
 
   const render = () => {
@@ -34,73 +33,152 @@ $(document).ready(function() {
             50}px' cy='${i * 70 + 50}px'></circle>`;
       }
     }
-    // console.log('hellooooooo');
     svg.innerHTML = doc;
   };
-  //   Set up Player moves
-  let currentPlayer = "coral";
+  //  Set up Player moves,
+  // Allow for first player to move
+  // switches between player's colors
+  // Set color in last cell
   window.clickCircle = (x, y) => {
     for (let i = grid.length - 1; i >= 0; i--) {
       let row = grid[i];
       let lastEmptyCircle = row[x];
-      console.log(y, lastEmptyCircle);
-      if (!lastEmptyCircle.color){
-          row[x] = {color:currentPlayer};
-          render();
-          return;
+
+      if (!lastEmptyCircle.color) {
+        row[x] = { color: currentPlayer };
+        //switches color to siginify player
+        currentPlayer = currentPlayer === "coral" ? "black" : "coral";
+        render();
+        winner();
+        return;
       }
     }
-  };
-  render();
-});
-
-// Set event listeners here
-
+  }
 //Set up Game loop
 //  a button to start the game
 
-//Allow for first player to move
-// hover for move
-// function moveHover(){
-
-// }
 //make the move
 // check for win
-// function horizontalWin(){
-//     for (let i=0;i<7;)
-
-// }
-// function verticalWin() {
-
-// }
-// function diagonalWinLeft(){
-
-// }
-// function diagonalWinRight (){
-
-// }
-//Switch Player
-//Allow for second player to move
-//make the move
-//check for win
+function winner (){
+console.log( "Who won?");
 // check for wins looping over the board
-//switch players
-//Win modal
-// function Win (){
-
+// function horizontalWin(){
+  for (let i = 0; i < grid.length; i++) {
+      let row = grid[i];
+      for (let j = 0; j < row.length; j++) {
+        let circle = grid[i][j];
+        if (circle && circle.color){
+          if (j === 0 || j === 1 || j === 2 || j === 3){
+              if (grid[i][j+1].color === circle.color &&
+                grid[i][j+2].color === circle.color &&
+                grid[i][j+3].color === circle.color){
+                    alert("Color " + circle.color +" wins!");
+                    return;
+                }
+            }
+        }
+      }
+  }
 // }
-//Lose modal
-// function Lose{
 
+// // function veritcalWin(){
+//   // for (let i = 0; i < grid.length; i++) {
+//   //     let row = grid[i];
+//   //     for (let j = 0; j < row.length; j++) {
+//   //       let circle = grid[i][j];
+//   //       if (circle && circle.color){
+//   //           if (j === 0 || j === 1){
+//   //               if (grid[i+1][j].color === circle.color &&
+//   //                 grid[i+2][j].color === circle.color &&
+//   //                 grid[i+3][j].color === circle.color){
+//   //                     alert("Color", circle.color,"wins!");
+//   //                 }
+//   //             }
+//   //         }
+//   //     }
+//   // }
+// // }
+
+// // function diagonalWinLeft(){
+
+// // }
+// // function diagonalWinRight (){
+
+// // }
+
+}
+  render();
+});
+
+  
+
+
+// check for wins looping over the board
+// function horizontalWin(){
+//   for (let i = 0; i < grid.length; i++) {
+//       let row = grid[i];
+//       for (let j = 0; j < row.length; j++) {
+//         let circle = grid[i][j];
+//         if (circle && circle.color){
+//           if (j === 0 || j === 1 || j === 2 || j === 3){
+//               if (grid[i][j+1].color === circle.color &&
+//                 grid[i][j+2].color === circle.color &&
+//                 grid[i][j+3].color === circle.color){
+//                     alert("Color", circle.color,"wins!");
+//                 }
+//             }
+//         }
+//       }
+//   }
 // }
-// Exit game modal
-// function exitGame{
 
-// }
-// play music
-// function playMusic(){
-//     let music = new Audio('musicfile.mp3');
-//     music.play();
-//     }
+// // function veritcalWin(){
+//   // for (let i = 0; i < grid.length; i++) {
+//   //     let row = grid[i];
+//   //     for (let j = 0; j < row.length; j++) {
+//   //       let circle = grid[i][j];
+//   //       if (circle && circle.color){
+//   //           if (j === 0 || j === 1){
+//   //               if (grid[i+1][j].color === circle.color &&
+//   //                 grid[i+2][j].color === circle.color &&
+//   //                 grid[i+3][j].color === circle.color){
+//   //                     alert("Color", circle.color,"wins!");
+//   //                 }
+//   //             }
+//   //         }
+//   //     }
+//   // }
+// // }
 
-// });
+// // function diagonalWinLeft(){
+
+// // }
+// // function diagonalWinRight (){
+
+// // }
+
+// //   render();
+// // });
+
+
+
+
+// //Win modal
+// // function Win (){
+
+// // }
+// //Lose modal
+// // function Lose{
+
+// // }
+// // Exit game modal
+// // function exitGame{
+
+// // }
+// // play music
+// // function playMusic(){
+// //     let music = new Audio('musicfile.mp3');
+// //     music.play();
+// //     }
+
+// // });
