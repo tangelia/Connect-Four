@@ -1,24 +1,24 @@
+const PLAYER_TOKEN = "orange"
+
+
 $(document).ready(function(){
-    //declarations here
-    
-    
-     //Setup board
-     const grid = [
-         ['','','','','','',''],
-         ['','','','','','',''],
-         ['','','','','','',''],
-         ['','','','','','',''],
-         ['','','','','','',''],
-         ['','','','','','',''],
+const grid = [
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+]
+ $('.col').click(function(){
+     $(this).html(PLAYER_TOKEN);
+ })
+ 
 
-     ];
-    //Place event listeners here
-
-    
-
-   
-    
+  
     //Setup variables
+
 
     //Set up Game loop
     //  a button to start the game
