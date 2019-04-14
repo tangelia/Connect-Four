@@ -64,15 +64,15 @@ $(document).ready(function() {
   //check for wins looping over the board
     veritcalWin();
     horizontalWin();
+    diagonalWinLeft();
     diagonalWinRight();
-    // diagonalWinLeft();
     return;
   };
 
   restart();
 
 
-
+// checks verticals
 function veritcalWin() {
   for (let i = 0; i < grid.length; i++) {
     let row = grid[i];
@@ -86,13 +86,14 @@ function veritcalWin() {
             grid[i + 3][j].color === circle.color
           ) {
             alert("Color "+ circle.color + " wins!");
+            return;
           }
         }
       }
     }
   }
 };
-
+//checks horizontals
 function horizontalWin() {
   for (let i = 0; i < grid.length; i++) {
     let row = grid[i];
@@ -113,7 +114,7 @@ function horizontalWin() {
     }
   }
 };
-
+//checks right diagonals
 function diagonalWinRight() {
   for (let i = 0; i < grid.length; i++) {
     let row = grid[i];
@@ -127,34 +128,36 @@ function diagonalWinRight() {
             grid[i + 3][j - 3].color === circle.color
           ) {
             alert("Color " + circle.color + " wins!");
+            return;
           }
         }
       }
     }
   }
 };
-
-// function diagonalWinLeft() {
-//   for (let i = 0; i < grid.length; i++) {
-//     let row = grid[i];
-//     for (let j = 0; j < row.length; j++) {
-//       let circle = grid[i][j];
-//       if (circle && circle.color) {
-//         if (i === 0 || i === 1) {
-//           if (j === 0 || j === 1 || j === 2 || j === 3){
-//             if (
-//               grid[i + 1][j + 1].color === circle.color &&
-//               grid[i + 2][j + 2].color === circle.color &&
-//               grid[i + 3][j + 3].color === circle.color
-//             ) {
-//               alert("Color "+ circle.color + " wins!");
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// };
+//checks left diagonals
+function diagonalWinLeft() {
+  for (let i = 0; i < grid.length; i++) {
+    let row = grid[i];
+    for (let j = 0; j < row.length; j++) {
+      let circle = grid[i][j];
+      if (circle && circle.color) {
+        if (i === 0 || i === 1) {
+          if (j === 0 || j === 1 || j === 2 || j === 3){
+            if (
+              grid[i + 1][j + 1].color === circle.color &&
+              grid[i + 2][j + 2].color === circle.color &&
+              grid[i + 3][j + 3].color === circle.color
+            ) {
+              alert("Color "+ circle.color + " wins!");
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+};
 
 //Win modal
 // function Win (){
