@@ -63,7 +63,6 @@ $(document).ready(function() {
     console.log("Who won?");
   //check for wins looping over the board
     veritcalWin();
-    debugger;
     // horizontalWin();
     // diagonalWinRight();
     // diagonalWinLeft();
@@ -80,7 +79,7 @@ function veritcalWin() {
     for (let j = 0; j < row.length; j++) {
       let circle = grid[i][j];
       if (circle && circle.color) {
-        if (j === 0 || j === 1) {
+        if (i === 0 || i === 1) {
           if (
             grid[i + 1][j].color === circle.color &&
             grid[i + 2][j].color === circle.color &&
