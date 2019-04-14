@@ -63,7 +63,7 @@ $(document).ready(function() {
     console.log("Who won?");
   //check for wins looping over the board
     veritcalWin();
-    // horizontalWin();
+    horizontalWin();
     // diagonalWinRight();
     // diagonalWinLeft();
     return;
@@ -93,26 +93,26 @@ function veritcalWin() {
   }
 };
 
-// function horizontalWin() {
-//   for (let i = 0; i < grid.length; i++) {
-//     let row = grid[i];
-//     for (let j = 0; j < row.length; j++) {
-//       let circle = grid[i][j];
-//       if (circle && circle.color) {
-//         if (j === 0 || j === 1 || j === 2 || j === 3) {
-//           if (
-//             grid[i][j + 1].color === circle.color &&
-//             grid[i][j + 2].color === circle.color &&
-//             grid[i][j + 3].color === circle.color
-//           ) {
-//             alert("Color " + circle.color + " wins!");
-//             return;
-//           }
-//         }
-//       }
-//     }
-//   }
-// };
+function horizontalWin() {
+  for (let i = 0; i < grid.length; i++) {
+    let row = grid[i];
+    for (let j = 0; j < row.length; j++) {
+      let circle = grid[i][j];
+      if (circle && circle.color) {
+        if (j === 0 || j === 1 || j === 2 || j === 3) {
+          if (
+            grid[i][j + 1].color === circle.color &&
+            grid[i][j + 2].color === circle.color &&
+            grid[i][j + 3].color === circle.color
+          ) {
+            alert("Color " + circle.color + " wins!");
+            return;
+          }
+        }
+      }
+    }
+  }
+};
 
 // function diagonalWinRight() {
 //   for (let i = 0; i < grid.length; i++) {
