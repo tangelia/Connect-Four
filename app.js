@@ -64,7 +64,7 @@ $(document).ready(function() {
   //check for wins looping over the board
     veritcalWin();
     horizontalWin();
-    // diagonalWinRight();
+    diagonalWinRight();
     // diagonalWinLeft();
     return;
   };
@@ -114,25 +114,25 @@ function horizontalWin() {
   }
 };
 
-// function diagonalWinRight() {
-//   for (let i = 0; i < grid.length; i++) {
-//     let row = grid[i];
-//     for (let j = 0; j < row.length; j++) {
-//       let circle = grid[i][j];
-//       if (circle && circle.color) {
-//         if (j === 3 || j === 4 || j === 5 || j === 6) {
-//           if (
-//             grid[i + 1][j - 1].color === circle.color &&
-//             grid[i + 2][j - 2].color === circle.color &&
-//             grid[i + 3][j - 3].color === circle.color
-//           ) {
-//             alert("Color " + circle.color + " wins!");
-//           }
-//         }
-//       }
-//     }
-//   }
-// };
+function diagonalWinRight() {
+  for (let i = 0; i < grid.length; i++) {
+    let row = grid[i];
+    for (let j = 0; j < row.length; j++) {
+      let circle = grid[i][j];
+      if (circle && circle.color) {
+        if (j === 3 || j === 4 || j === 5 || j === 6) {
+          if (
+            grid[i + 1][j - 1].color === circle.color &&
+            grid[i + 2][j - 2].color === circle.color &&
+            grid[i + 3][j - 3].color === circle.color
+          ) {
+            alert("Color " + circle.color + " wins!");
+          }
+        }
+      }
+    }
+  }
+};
 
 // function diagonalWinLeft() {
 //   for (let i = 0; i < grid.length; i++) {
