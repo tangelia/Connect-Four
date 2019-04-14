@@ -1,15 +1,17 @@
 /* style the board 
 create the empty grid*/
 body{
-  height: 700px;
+  height: 1000px;
   text-align: center;
   background-color: cyan; /* For browsers that do not support gradients */
   background-image: linear-gradient(cyan, palegreen); 
+  background: cover;
     
 }
 h1{
   font-family: 'Montserrat', sans-serif;
-  color: whitesmoke;
+  color: white;
+  text-shadow: 1px 1px gainsboro;
 }
 .gameboard{
   background-color: darkgray;
@@ -20,22 +22,17 @@ svg{
   height: 510px;
   
 }
-/* .col{
-width: 70px;
-height: 70px;
-display: inline-block;
-background-color:black;
-border-radius: 50%;
-margin 5px;
-}
 
-.hover-coral{
+
+/* .hover-coral{
   background-color: rgba(255,127,80,0.2);
 }
 .hover-black{
   background-color: rgba(38,50,58,0.2);
 }
 
-button{
+#reset{}
 
-} */
+
+#soundBtnt{}
+*/

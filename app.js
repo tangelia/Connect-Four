@@ -4,15 +4,21 @@ let currentPlayer = "coral";
 //Show board
 
 $(document).ready(function() {
-  const grid = [
-    [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}],
-    [{}, {}, {}, {}, {}, {}, {}]
-  ];
+  let grid = []
+
+  restart =()=>{
+    grid = [
+      [{}, {}, {}, {}, {}, {}, {}],
+      [{}, {}, {}, {}, {}, {}, {}],
+      [{}, {}, {}, {}, {}, {}, {}],
+      [{}, {}, {}, {}, {}, {}, {}],
+      [{}, {}, {}, {}, {}, {}, {}],
+      [{}, {}, {}, {}, {}, {}, {}],
+      [{}, {}, {}, {}, {}, {}, {}]
+    ];
+
+    render();
+  }
 
   const render = () => {
     const svg = document.getElementById("svg");
@@ -53,132 +59,112 @@ $(document).ready(function() {
         return;
       }
     }
-  }
-//Set up Game loop
-//  a button to start the game
+  };
+  //Set up Game loop
+  //  a button to start the game
 
-//make the move
-// check for win
-function winner (){
-console.log( "Who won?");
-// check for wins looping over the board
-// function horizontalWin(){
-  for (let i = 0; i < grid.length; i++) {
+  //make the move
+  // check for win
+  function winner(){
+    console.log("Who won?");
+    // check for wins looping over the board
+    // checking horizontal
+    for (let i = 0; i < grid.length; i++) {
       let row = grid[i];
       for (let j = 0; j < row.length; j++) {
         let circle = grid[i][j];
-        if (circle && circle.color){
-          if (j === 0 || j === 1 || j === 2 || j === 3){
-              if (grid[i][j+1].color === circle.color &&
-                grid[i][j+2].color === circle.color &&
-                grid[i][j+3].color === circle.color){
-                    alert("Color " + circle.color +" wins!");
-                    return;
-                }
+        if (circle && circle.color) {
+          // Checks for horizontal win
+          if (j === 0 || j === 1 || j === 2 || j === 3) {
+            if (
+              grid[i][j + 1].color === circle.color &&
+              grid[i][j + 2].color === circle.color &&
+              grid[i][j + 3].color === circle.color
+            ) {
+              alert("Color " + circle.color + " wins!");
+              return;
             }
+          }
+          if (j === 0 || j === 1) {
+            if (
+              grid[i + 1][j].color === circle.color &&
+              grid[i + 2][j].color === circle.color &&
+              grid[i + 3][j].color === circle.color
+            ) {
+              alert("Color " + circle.color + " wins!");
+              return;
+            }
+          }
         }
       }
+    }
   }
-// }
-
-// // function veritcalWin(){
-//   // for (let i = 0; i < grid.length; i++) {
-//   //     let row = grid[i];
-//   //     for (let j = 0; j < row.length; j++) {
-//   //       let circle = grid[i][j];
-//   //       if (circle && circle.color){
-//   //           if (j === 0 || j === 1){
-//   //               if (grid[i+1][j].color === circle.color &&
-//   //                 grid[i+2][j].color === circle.color &&
-//   //                 grid[i+3][j].color === circle.color){
-//   //                     alert("Color", circle.color,"wins!");
-//   //                 }
-//   //             }
-//   //         }
-//   //     }
-//   // }
-// // }
-
-// // function diagonalWinLeft(){
-
-// // }
-// // function diagonalWinRight (){
-
-// // }
-
-}
-  render();
-});
-
+  restart ();
   
-
-
-// check for wins looping over the board
-// function horizontalWin(){
+  // function playMusic(){
+  //   let music = new Audio('FKJ - Tui.mp3');
+  //   music.play();
+  //   }
+});
+// // function veritcalWin(){
 //   for (let i = 0; i < grid.length; i++) {
-//       let row = grid[i];
-//       for (let j = 0; j < row.length; j++) {
-//         let circle = grid[i][j];
+//        let row = grid[i];
+//        for (let j = 0; j < row.length; j++) {
+//          let circle = grid[i][j];
 //         if (circle && circle.color){
-//           if (j === 0 || j === 1 || j === 2 || j === 3){
-//               if (grid[i][j+1].color === circle.color &&
-//                 grid[i][j+2].color === circle.color &&
-//                 grid[i][j+3].color === circle.color){
+//           if (j === 0 || j === 1){
+//               if (grid[i+1][j].color === circle.color &&
+//                 grid[i+2][j].color === circle.color &&
+//                 grid[i+3][j].color === circle.color){
 //                     alert("Color", circle.color,"wins!");
 //                 }
 //             }
-//         }
+//            }
 //       }
-//   }
+//    }
+// / }
+// function diagonalWinLeft(){
+//for (let i = 0; i < grid.length; i++) {
+//     let row = grid[i];
+//     for (let j = 0; j < row.length; j++) {
+//       let circle = grid[i][j];
 // }
-
-// // function veritcalWin(){
-//   // for (let i = 0; i < grid.length; i++) {
+// function diagonalWinRight (){
+//for (let i = 0; i < grid.length; i++) {
 //   //     let row = grid[i];
 //   //     for (let j = 0; j < row.length; j++) {
 //   //       let circle = grid[i][j];
-//   //       if (circle && circle.color){
-//   //           if (j === 0 || j === 1){
-//   //               if (grid[i+1][j].color === circle.color &&
-//   //                 grid[i+2][j].color === circle.color &&
-//   //                 grid[i+3][j].color === circle.color){
-//   //                     alert("Color", circle.color,"wins!");
-//   //                 }
-//   //             }
-//   //         }
-//   //     }
-//   // }
-// // }
+// }
 
-// // function diagonalWinLeft(){
+// check for wins looping over the board
+// function horizontalWin(){
 
-// // }
-// // function diagonalWinRight (){
+// function veritcalWin(){
 
-// // }
+// function diagonalWinLeft(){
 
-// //   render();
-// // });
+// }
+// function diagonalWinRight (){
 
+//   render();
+// });
 
+//Win modal
+// function Win (){
 
+// }
+//Lose modal
+// function Lose{
 
-// //Win modal
-// // function Win (){
+// }
+// Exit game modal
+// function exitGame{
 
-// // }
-// //Lose modal
-// // function Lose{
+// }
+// play music
+// function playMusic(){
+//     let music = new Audio('FKJ - Tui.mp3');
+//     music.play();
+//     }
 
-// // }
-// // Exit game modal
-// // function exitGame{
-
-// // }
-// // play music
-// // function playMusic(){
-// //     let music = new Audio('musicfile.mp3');
-// //     music.play();
-// //     }
-
-// // });
+// });

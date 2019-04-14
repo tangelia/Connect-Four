@@ -13,7 +13,7 @@
     <!-- setup board 
     seven columns
     six rows -->
-    <input type="button" value="sound" onclick="playMusic()" />
+    <input type="button" id="soundBtn" value="sound" onclick="playMusic()" />
     <div class="gameboard"" id="game">
       <svg id="svg"></svg>
     <!-- <div class="rows">
@@ -71,7 +71,7 @@
       <div class="col empty" data-i=5 data-j=6></div>
     </div> -->
     </div>
-    <button type="reset">RESTART</button>
+    <button type="reset" id="reset" onclick="restart()">RESTART</button>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script defer src="app.js"></script>
