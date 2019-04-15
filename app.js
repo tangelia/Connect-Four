@@ -160,16 +160,17 @@ function diagonalWinLeft() {
   }
 };
 
-//Win modal
-// function Win (){
-
-// }
+// Win modal
+function winModal() {
+  
+};
 
 // Exit game modal
-// function exitGame{
+// function closeModal(){
 
 // }
 
+// function playAgain()
 // play music
 // function playMusic(){
 //     let music = new Audio('FKJ - Tui.mp3');
