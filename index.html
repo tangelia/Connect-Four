@@ -13,7 +13,11 @@
     <!-- setup board 
     seven columns
     six rows -->
-    <input type="button" id="soundBtn" value="MUSIC" onclick="playMusic()" />
+    
+    
+    <button type="button" id="soundBtn"  onClick="togglePlay()">MUSIC</button>
+    <audio id="myAudio"  value="MUSIC" src="/music/FKJTui.mp3" preload="auto">
+    </audio>
     <div class="gameboard"" id="game">
       <svg id="svg"></svg>
     
@@ -81,7 +85,7 @@
       <div class="modal-content">
         <div><a href="#close" title="Close" class="close">+</a></div>
         <h2>CONGRATS!</h2>
-        
+        <h3></h3>
         <div class="restart">
           <button id="play-again"onclick="playAgain()">
             Play again ?</a>

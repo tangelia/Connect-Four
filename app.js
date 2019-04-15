@@ -1,6 +1,7 @@
 //Setup variables
 let currentPlayer = "coral";
 let grid = [];
+
 //Show board and restart board
 
 $(document).ready(function() {
@@ -42,7 +43,7 @@ $(document).ready(function() {
      Allow for first player to move
      switches between player's colors
      Set color in last cell*/
-  window.clickCircle = (x, y) =>{
+  window.clickCircle = (x) =>{
     for (let i = grid.length - 1; i >= 0; i--) {
       let row = grid[i];
       let lastEmptyCircle = row[x];
@@ -160,21 +161,22 @@ function diagonalWinLeft() {
   }
 };
 
-// Win modal
-function winModal() {
-  
-};
+;
 
 // Exit game modal
 // function closeModal(){
 
 // }
 
-// function playAgain()
+// function playAgain(){
+
+// }
+
 // play music
-// function playMusic(){
-//     let music = new Audio('FKJ - Tui.mp3');
-//     music.play();
-// };
+var myAudio = document.getElementById("myAudio");
+
+function togglePlay() {
+  return myAudio.paused ? myAudio.play() : myAudio.pause();
+};
 
 });

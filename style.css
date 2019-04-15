@@ -47,7 +47,7 @@ button:focus {
   background-color: white;
 }
 /* Music Button */
-#soundBtn{
+.soundBtn{
   padding: 0.5em 1em;
   border: solid 1px navy;
   border-radius: 4px;
@@ -57,14 +57,14 @@ button:focus {
   cursor: pointer;
   margin: 2px 0;
 }
-#soundBtn:hover {
+.soundBtn:hover {
   color: navy;
   border-color: currentColor;
   background-color: white;
 }
 
-#soundBtn:hover,
-#soundBtn:focus {
+.soundBtn:hover,
+.soundBtn:focus {
   color: navy;
   border-color: currentColor;
   background-color: white;
