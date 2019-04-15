@@ -14,9 +14,9 @@
     seven columns
     six rows -->
     
-    
-    <button type="button" id="soundBtn"  onClick="togglePlay()">MUSIC</button>
-    <audio id="myAudio"  value="MUSIC" src="/music/FKJTui.mp3" preload="auto">
+    <button type="button" id="soundBtn" onclick="togglePlay()">MUSIC</button>
+    <audio id="myAudio">
+    <source src="https://drive.google.com/open?id=1v-M3VgENMtUN52Kf2CHkSEf1QRSDYEKO" type="audio/mpeg"></source>
     </audio>
     <div class="gameboard"" id="game">
       <svg id="svg"></svg>
@@ -85,10 +85,10 @@
       <div class="modal-content">
         <div><a href="#close" title="Close" class="close">+</a></div>
         <h2>CONGRATS!</h2>
-        <h3></h3>
+        <h3 id="winner"></h3>
         <div class="restart">
           <button id="play-again"onclick="playAgain()">
-            Play again ?</a>
+            Play again ?</a></button>
         </div>
       </div>
     </div>
@@ -97,5 +97,6 @@
     
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script defer src="app.js"></script>
+  <script src="app.js"></script>
+  <script src="app2.js"></script>
 </html>

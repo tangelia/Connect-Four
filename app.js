@@ -43,12 +43,12 @@ $(document).ready(function() {
      Allow for first player to move
      switches between player's colors
      Set color in last cell*/
-  window.clickCircle = (x) =>{
+  window.clickCircle = x => {
     for (let i = grid.length - 1; i >= 0; i--) {
       let row = grid[i];
       let lastEmptyCircle = row[x];
       if (!lastEmptyCircle.color) {
-        row[x] = { color:currentPlayer };
+        row[x] = { color: currentPlayer };
         //switches color to siginify player
         currentPlayer = currentPlayer === "coral" ? "black" : "coral";
         render();
@@ -60,123 +60,117 @@ $(document).ready(function() {
   /*Set up Game loop
     make the move
     check for win*/
-  function winner(){
+  function winner() {
     console.log("Who won?");
-  //check for wins looping over the board
+    //check for wins looping over the board
     veritcalWin();
     horizontalWin();
     diagonalWinLeft();
     diagonalWinRight();
     return;
-  };
+  }
 
   restart();
   render();
 
-// checks verticals
-function veritcalWin() {
-  for (let i = 0; i < grid.length; i++) {
-    let row = grid[i];
-    for (let j = 0; j < row.length; j++) {
-      let circle = grid[i][j];
-      if (circle && circle.color) {
-        if (i === 0 || i === 1) {
-          if (
-            grid[i + 1][j].color === circle.color &&
-            grid[i + 2][j].color === circle.color &&
-            grid[i + 3][j].color === circle.color
-          ) {
-            alert("Color "+ circle.color + " wins!");
-            return;
-          }
-        }
-      }
-    }
-  }
-};
-//checks horizontals
-function horizontalWin() {
-  for (let i = 0; i < grid.length; i++) {
-    let row = grid[i];
-    for (let j = 0; j < row.length; j++) {
-      let circle = grid[i][j];
-      if (circle && circle.color) {
-        if (j === 0 || j === 1 || j === 2 || j === 3) {
-          if (
-            grid[i][j + 1].color === circle.color &&
-            grid[i][j + 2].color === circle.color &&
-            grid[i][j + 3].color === circle.color
-          ) {
-            alert("Color " + circle.color + " wins!");
-            return;
-          }
-        }
-      }
-    }
-  }
-};
-//checks right diagonals
-function diagonalWinRight() {
-  for (let i = 0; i < grid.length; i++) {
-    let row = grid[i];
-    for (let j = 0; j < row.length; j++) {
-      let circle = grid[i][j];
-      if (circle && circle.color) {
-        if (j === 3 || j === 4 || j === 5 || j === 6) {
-          if (
-            grid[i + 1][j - 1].color === circle.color &&
-            grid[i + 2][j - 2].color === circle.color &&
-            grid[i + 3][j - 3].color === circle.color
-          ) {
-            alert("Color " + circle.color + " wins!");
-            return;
-          }
-        }
-      }
-    }
-  }
-};
-//checks left diagonals
-function diagonalWinLeft() {
-  for (let i = 0; i < grid.length; i++) {
-    let row = grid[i];
-    for (let j = 0; j < row.length; j++) {
-      let circle = grid[i][j];
-      if (circle && circle.color) {
-        if (i === 0 || i === 1 || i === 2) {
-          if (j === 0 || j === 1 || j === 2 || j === 3){
+  // checks verticals
+  function veritcalWin() {
+    for (let i = 0; i < grid.length; i++) {
+      let row = grid[i];
+      for (let j = 0; j < row.length; j++) {
+        let circle = grid[i][j];
+        if (circle && circle.color) {
+          if (i === 0 || i === 1) {
             if (
-              grid[i + 1][j + 1].color === circle.color &&
-              grid[i + 2][j + 2].color === circle.color &&
-              grid[i + 3][j + 3].color === circle.color
+              grid[i + 1][j].color === circle.color &&
+              grid[i + 2][j].color === circle.color &&
+              grid[i + 3][j].color === circle.color
             ) {
               alert("Color "+ circle.color + " wins!");
               return;
-              debugger;
             }
           }
         }
       }
     }
   }
-};
+  //checks horizontals
+  function horizontalWin() {
+    for (let i = 0; i < grid.length; i++) {
+      let row = grid[i];
+      for (let j = 0; j < row.length; j++) {
+        let circle = grid[i][j];
+        if (circle && circle.color) {
+          if (j === 0 || j === 1 || j === 2 || j === 3) {
+            if (
+              grid[i][j + 1].color === circle.color &&
+              grid[i][j + 2].color === circle.color &&
+              grid[i][j + 3].color === circle.color
+            ) {
+              alert("Color "+ circle.color + " wins!");
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  //checks right diagonals
+  function diagonalWinRight() {
+    for (let i = grid.length - 1; i >= 0 ; i--) {
+      let row = grid[i];
+      for (let j = row.length - 1; j>=0 ; j--) {
+        let circle = grid[i][j];
+        if (circle && circle.color) {
+          if (j < 3){
+            if (
+              grid[i - 1][j - 1].color === circle.color &&
+              grid[i - 2][j - 2].color === circle.color &&
+              grid[i - 3][j - 3].color === circle.color
+            ) {
+              alert("Color "+ circle.color + " wins!");
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  //checks left diagonals
+  function diagonalWinLeft() {
+    for (let i = grid.length-1; i >= 0; i--) {
+      let row = grid[i];
+      for (let j = 0; j < row.length; j++) {
+        let circle = grid[i][j];
+        if (circle && circle.color) {
+            if (j <= 3) {
+              if (
+                grid[i - 1][j + 1].color === circle.color &&
+                grid[i - 2][j + 2].color === circle.color &&
+                grid[i - 3][j + 3].color === circle.color
+              ) {
+                alert("Color "+ circle.color + " wins!");
+                return;
+                // debugger;
+              }
+            }
+          }
+        }
+      }
+    }
+  
 
-;
+  
+  // function winModal(){
+  //   document.getElementById("winner").innerHTML = `$(Color) wins!`;
 
-// Exit game modal
-// function closeModal(){
+  // };
 
-// }
-
-// function playAgain(){
-
-// }
-
-// play music
-var myAudio = document.getElementById("myAudio");
-
-function togglePlay() {
-  return myAudio.paused ? myAudio.play() : myAudio.pause();
-};
-
+  // play music
+  
+    var music = document.getElementById("myAudio");
+      function togglePlay(){
+       return music.paused() ? music.play() : music.pause();
+     };
+     
 });
