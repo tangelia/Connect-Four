@@ -29,7 +29,8 @@ Users can reset the game and choose to have music on or off.
 
 
 Wireframe:
-<img src="" alt="Wireframe"/>
+<img src="WireFrame.jpg" alt="Wireframe"/>
+<img src="WireFrame2.jpg" alt="Wireframe"/>
 
 
 Whiteboard:
