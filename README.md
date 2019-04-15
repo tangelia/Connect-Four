@@ -1,7 +1,7 @@
 # Connect-Four
 
 #### A full-stack web application built as first project.
-<img src="Connectfour.png" alt="Connect Four Mainpage Screenshot"/>
+<img src="images/Connectfour.png" alt="Connect Four Mainpage Screenshot"/>
 
 ## Description
 Connect Four: a two player connection game. First player to get four of the same colored checkers in a row either horizontally, vertically or diagonally wins.
@@ -29,15 +29,16 @@ Users can reset the game and choose to have music on or off.
 
 
 Wireframe:
-<img src="WireFrame.jpg" alt="Wireframe"/>
-<img src="WireFrame2.jpg" alt="Wireframe"/>
+<img src="images/WireFrame.jpg" alt="Wireframe"/>
+<img src="images/WireFrame2.jpg" alt="Wireframe"/>
+
 
 
 Whiteboard:
-<img src="WhiteBoard6.jpg" alt="Whiteboarding Session"/>
-<img src="WhiteBoard4.jpg" alt="Whiteboarding Session"/>
-<img src="WhiteBoard2.jpg" alt="Whiteboarding Session"/>
-<img src="WhiteBoard.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard6.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard4.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard2.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard.jpg" alt="Whiteboarding Session"/>
 
 ## <a name="design"></a>Design
 * Design elements implemented using HTML5 and CSS3. 
