@@ -61,7 +61,7 @@ Whiteboard:
 
 ## <a name="author"></a>About the Author
 
-Tangelia is a Southerner and an avid tea drinker based in Atlanta. Prior to General Assembly and Codebridge, she held pivotal roles in finance and traditional print media, where she worked with C-Level executives for over 15 years in corporate America on advertising and marketing campaigns. After leaving corporate America, Tangelia discovered her passion for designing tools that make processes more efficient. She realized that software engineering would be the perfect opportunity to combine this passion with her love for problem solving. Tangelia's love for learning and making an impact runs strong,and she is excited to contribute her creativity to a full-stack software development role. Learn more about Tangelia [here](https://www.linkedin.com/in/tangeliabroom). 
+Tangelia is a Southerner and an avid tea drinker based in Atlanta. Prior to General Assembly and Codebridge, she held pivotal roles in finance and traditional print media, where she worked with C-Level executives for over 15 years in corporate America on advertising and marketing campaigns. After leaving corporate America, Tangelia discovered her passion for designing tools that make processes more efficient. She realized that software engineering would be the perfect opportunity to combine this passion with her love for problem solving. Tangelia's love for learning and making an impact runs strong,and she is excited to contribute her creativity to a full-stack software development role. Learn more about Tangelia [here](https://www.linkedin.com/in/tangelia). 
 
 
 
