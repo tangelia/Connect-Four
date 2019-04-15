@@ -33,8 +33,10 @@ Wireframe:
 
 
 Whiteboard:
-<img src="" alt="Whiteboarding Session"/>
-
+<img src="images/WhiteBoard6.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard4.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard2.jpg" alt="Whiteboarding Session"/>
+<img src="images/WhiteBoard.jpg" alt="Whiteboarding Session"/>
 
 ## <a name="design"></a>Design
 * Design elements implemented using HTML5 and CSS3. 
