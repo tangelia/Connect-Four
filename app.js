@@ -70,7 +70,7 @@ $(document).ready(function() {
   };
 
   restart();
-
+  render();
 
 // checks verticals
 function veritcalWin() {
@@ -142,7 +142,7 @@ function diagonalWinLeft() {
     for (let j = 0; j < row.length; j++) {
       let circle = grid[i][j];
       if (circle && circle.color) {
-        if (i === 0 || i === 1) {
+        if (i === 0 || i === 1 || i === 2) {
           if (j === 0 || j === 1 || j === 2 || j === 3){
             if (
               grid[i + 1][j + 1].color === circle.color &&
@@ -151,6 +151,7 @@ function diagonalWinLeft() {
             ) {
               alert("Color "+ circle.color + " wins!");
               return;
+              debugger;
             }
           }
         }
@@ -168,14 +169,11 @@ function diagonalWinLeft() {
 // function exitGame{
 
 // }
-// function playMusic(){
-  //   let music = new Audio('FKJ - Tui.mp3');
-  //   music.play();
-  //   }
+
 // play music
 // function playMusic(){
 //     let music = new Audio('FKJ - Tui.mp3');
 //     music.play();
-//     }
+// };
 
 });

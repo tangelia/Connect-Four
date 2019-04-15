@@ -13,9 +13,10 @@
     <!-- setup board 
     seven columns
     six rows -->
-    <input type="button" id="soundBtn" value="sound" onclick="playMusic()" />
+    <input type="button" id="soundBtn" value="MUSIC" onclick="playMusic()" />
     <div class="gameboard"" id="game">
       <svg id="svg"></svg>
+    
     <!-- <div class="rows">
       <div class="col empty" data-i=0 data-j=0></div>
       <div class="col empty" data-i=0 data-j=1></div>
@@ -71,6 +72,22 @@
       <div class="col empty" data-i=5 data-j=6></div>
     </div> -->
     </div>
+    <!-- The Modal -->
+
+  <div id="boxModal" class="modal">
+
+    <div class="modal-background">
+      <div class="modal-content">
+        <div><a href="#close" title="Close" class="close">+</a></div>
+        <h2>Player Has Won!</h2>
+        
+        <div class="restart">
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
     <button type="reset" id="reset" onclick="restart()">RESTART</button>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

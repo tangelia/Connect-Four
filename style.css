@@ -14,7 +14,7 @@ h1{
   text-shadow: 1px 1px gray;
 }
 .gameboard{
-  background-color: darkgray;
+  /* background-color: darkgray; */
   display: inline-block;
 }
 svg{
@@ -22,26 +22,49 @@ svg{
   height: 480px;
   
 }
-
+/* Restart button */
 button{
   padding: 0.5em 1em;
-  border: solid 1px transparent;
+  border: solid 1px navy;
   border-radius: 4px;
   font-family: 'Montserrat', sans-serif;
-  color: white;
-  background-color: green;
+  color: navy;
+  background-color: transparent;
   cursor: pointer;
   margin: 2px 0;
 }
 button:hover {
-  color: green;
+  color: navy;
   border-color: currentColor;
   background-color: white;
 }
 
 button:hover,
 button:focus {
-  color: green;
+  color: navy;
+  border-color: currentColor;
+  background-color: white;
+}
+/* Music Button */
+#soundBtn{
+  padding: 0.5em 1em;
+  border: solid 1px navy;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  color: navy;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 2px 0;
+}
+#soundBtn:hover {
+  color: navy;
+  border-color: currentColor;
+  background-color: white;
+}
+
+#soundBtn:hover,
+#soundBtn:focus {
+  color: navy;
   border-color: currentColor;
   background-color: white;
 }
